@@ -8,26 +8,22 @@ function pivot(){}
 
 function swap(arr, a, b) {
     let temp = arr[a]; 
-    arr[a] = arr[b]; 
-    arr[b] = arr[temp]; 
+    arr[a] = arr[b];
+    arr[b] = temp;
 }
 
+function partition(arr, left, right, pivot) {
+
+}
 
 /*
 quickSort accepts an array, left index, and right index
 */
 
-let arr = [4, 20, 12, 10, 7, 9];
+let arr = [7,2,1,6,8,5,3,4];
 
 function quickSort(arr) {
-    let leftItem; 
-    let rightItem; 
-    let pivot = Math.floor(arr.length / 2);
 
-    console.log('pivot', pivot);
-
-    // swap pivot and last index.
-    swap(arr, arr[pivot], arr[arr.length-1]);
 
     return arr;
 }
