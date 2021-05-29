@@ -1,25 +1,30 @@
-// add whatever parameters you deem necessary
 function averagePair(arr, target) {
-     
+    
     if (arr.length === 0) return false;
 
-    // averagePair([1, 2, 3], 2.5)
-    let i = 1;
-    let start = 0; 
-    while(start !== arr.length - 1) {
-        
-        // did we find target value? 
-        if ((arr[start] + arr[i]) / 2 === target) return true; 
-
-        // did we reach end of the array? 
-        if (i % arr.length - 1 === 0) {
-            ++start; 
-            i = start + 1; 
-        } 
-        ++i;
+    let current = 0; 
+    let next = 1; 
+    while (current !== arr.length - 1) {
+        // did we find target value?
+        if ((arr[current] + arr[next]) / 2 === target) return true;
+ 
+        // did next pointer reach end of array? 
+        if (arr.length - 1 === next) {
+            ++current;                  // re-align current and next pointers. 
+            next = current + 1; 
+        } else {
+            // increment next pointer. 
+            ++next;
+        }
     }
 
-    return false; 
+    return false; // if not found in while-loop. 
 }
+
+
+
+
+
+
 
 module.exports = averagePair;
